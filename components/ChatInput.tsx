@@ -14,7 +14,7 @@ const ChatInput = ({ chatId }: Props) => {
 	const { data: session } = useSession();
 
 	// TODO: use swr to get the model
-	const model = "text-davinci-003";
+	const model = "gpt-3.5-turbo";
 
 	const sendMessage = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -22,6 +22,8 @@ const ChatInput = ({ chatId }: Props) => {
 		if (!prompt) return;
 
 		const input = prompt.trim();
+
+		setPrompt("");
 
 		const message: Message = {
 			text: input,
