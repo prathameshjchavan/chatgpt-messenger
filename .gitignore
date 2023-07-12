@@ -36,3 +36,5 @@ next-env.d.ts
 
 # firebase config
 firebase.ts
+firebaseAdmin.ts
+serviceAccountKey.json
