@@ -1,7 +1,9 @@
 import openai from "@/lib/chatgpt";
 import { NextResponse } from "next/server";
 
-export async function GET(request: Request) {
+export async function GET(
+	request: Request
+): Promise<NextResponse<ModelResponseBody>> {
 	const models = await openai.listModels().then((res) => res.data.data);
 
 	const modelOptions = models.map((model) => ({

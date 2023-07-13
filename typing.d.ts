@@ -7,3 +7,12 @@ interface Message {
 		avatar: string;
 	};
 }
+
+interface ModelResponseBody {
+	modelOptions: Option[];
+}
+
+interface Option {
+	value: string;
+	label: string;
+}
