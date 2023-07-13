@@ -5,7 +5,7 @@ const query = async (prompt: string, model: string) => {
 		.createChatCompletion({
 			model,
 			messages: [{ role: "user", content: prompt }],
-			temperature: 0.9,
+			temperature: 0.8,
 			top_p: 1,
 			max_tokens: 1000,
 			presence_penalty: 0,

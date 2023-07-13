@@ -3,11 +3,9 @@
 import useSWR from "swr";
 import Select from "react-select";
 
-type Props = {};
-
 const fetchModels = () => fetch("/api/getEngines").then((res) => res.json());
 
-const ModelSelection = (props: Props) => {
+const ModelSelection = () => {
 	const { data: models, isLoading } = useSWR<ModelResponseBody>(
 		"models",
 		fetchModels
