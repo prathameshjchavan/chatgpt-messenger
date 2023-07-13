@@ -38,3 +38,4 @@ next-env.d.ts
 firebase.ts
 firebaseAdmin.ts
 serviceAccountKey.json
+.vercel
