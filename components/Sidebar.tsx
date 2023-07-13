@@ -6,6 +6,7 @@ import NewChat from "./NewChat";
 import { db } from "@/firebase";
 import { collection, orderBy, query } from "firebase/firestore";
 import ChatRow from "./ChatRow";
+import ModelSelection from "./ModelSelection";
 
 const Sidebar = () => {
 	const { data: session } = useSession();
@@ -23,7 +24,9 @@ const Sidebar = () => {
 				<div>
 					<NewChat />
 
-					<div>{/* Model Selection */}</div>
+					<div className="hidden sm:inline">
+						<ModelSelection />
+					</div>
 
 					{/* Map through the ChatRows */}
 					{chats?.docs.map((chat) => (
