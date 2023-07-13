@@ -2,7 +2,7 @@
 
 import { db } from "@/firebase";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { addDoc, collection, Timestamp } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import { FormEvent, useState } from "react";
 import toast from "react-hot-toast";
@@ -31,7 +31,7 @@ const ChatInput = ({ chatId }: Props) => {
 
 		const message: Message = {
 			text: input,
-			createdAt: serverTimestamp(),
+			createdAt: Timestamp.now(),
 			user: {
 				_id: session?.user?.email!,
 				name: session?.user?.name!,
